@@ -28,5 +28,7 @@ Scala：https://www.scala-lang.org/download/
 
 build.gradle为项目的依赖配置文件
 
+![屏幕快照 2020-01-10 下午1.38.07](https://github.com/ws0352/spark_learning/blob/master/images/4.png)
 
 在该文件加入spark依赖便可以安心的写spark语句了。
+![屏幕快照 2020-01-10 下午1.52.42](https://github.com/ws0352/spark_learning/blob/master/images/5.png)
