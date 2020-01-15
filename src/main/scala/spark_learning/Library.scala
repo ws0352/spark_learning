@@ -37,7 +37,14 @@ class Library {
   df.createGlobalTempView("tree")
   spark.sql("SELECT * FROM global_temp.tree").show()
   spark.newSession().sql("SELECT * FROM global_temp.tree").show()
-
-  val caseClassD5 = Seq(Tree("Saries SS", 16.01F)).toDS()
-  caseClassD5.show()
+  //为样例类创建编码器
+  val caseClassDS = Seq(Tree("Saries SS", 16.01F)).toDS()
+  caseClassDS.show()
+  //大多数常用类型的编码器被隐式转换自动的提供
+  val primitiveDS = Seq(1, 2, 3).toDS()
+  primitiveDS.map(_ + 1).collect()
+//  通过提供一个类，DataFrames可以被转换为DataSet
+  val path = "./src/main/resources/tree.json"
+  val treeDS = spark.read.json(path).as[Tree]
+  treeDS.show()
 }

@@ -1,3 +1,3 @@
 package spark_learning
 
-case class Tree(str: String, fl: Float)
+case class Tree(name: String, ref_height: Double)
